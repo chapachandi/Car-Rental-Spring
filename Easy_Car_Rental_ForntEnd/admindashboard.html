@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Easy Car Rental | Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assests/scss/custom.css">
+        <link href="assests/bootsrap/css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="main-header">
+        <div class="logo-header">
+            <a href="homepage.html" class="logo">
+                <img src="assests/icon/car-garage-solid-48.png">
+                Easy Car Rental
+            </a>
+            <button class="navbar-toggler sidenav-toggler ml-auto" type="button"
+                    data-toggle="collapse" data-target="collapse" aria-controls="sidebar"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <button class="topbar-toggler more"><img src="assests/icon/icons8-menu-24.png"> </button>
+        </div>
+        <nav class="navbar navbar-header navbar-expand-lg">
+            <div class="container-fluid">
+
+                <form class="navbar-left navbar-form nav-search mr-md-3" action="">
+                    <div class="input-group">
+                        <input type="text" placeholder="Search ..." class="form-control">
+                        <div class="input-group-append">
+								<span class="input-group-text">
+
+								</span>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </nav>
+    </div>
+    <div class="sidebar">
+        <div class="scrollbar-inner sidebar-wrapper">
+
+            <ul class="nav">
+                <li class="nav-item active">
+                    <a href="#dashBoard_panel" id="dashBoard">
+                        <img src="assests/icon/icons8-home-24.png" class="figure-img ">
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li  class="nav-item">
+                    <a href="#customer_panel" id="customer">
+                        <img src="assests/icon/icons8-user-group-30%20(2).png" class="figure-img ">
+                        <p>View Customer</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#manageCar_panel"  id="manageCar">
+                        <img src="assests/icon/car-solid-24.png" class="figure-img ">
+                        <p>Manage Cars</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#reqRental_panel" id="reqRental">
+                        <img src="assests/icon/icons8-add-shopping-cart-30.png" class="figure-img ">
+                        <p>View Rental Requests</p>
+                    </a>
+                </li>
+                <li  class="nav-item">
+                    <a href="#income_panel" id="income">
+                        <img src="assests/icon/calculator-regular-24.png" class="figure-img ">
+                        <p>Calculate Income</p>
+                    </a>
+                </li>
+
+                <li  class="nav-item">
+                    <a href="#driver_panel" id="driver">
+                        <img src="assests/icon/user-detail-solid-24.png" class="figure-img ">
+                        <p>Manage Drivers</p>
+                    </a>
+                </li>
+                <li  class="nav-item">
+                    <a href="#sumery_panel" id="sumery">
+                        <img src="assests/icon/icons8-order-history-24.png" class="figure-img ">
+                        <p>Daily Sumery</p>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!--dash board-->
+    <div id="dashBoard_panel" class="main-panel">
+        <div class="content">
+            <div class="container-fluid">
+                <h4 class="page-title">Dashboard</h4>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card card-stats card-warning">
+                            <div class="card-body ">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="icon-big text-center">
+                                            <img src="assests/icon/icons8-user-group-60.png" class="figure-img">
+                                        </div>
+                                    </div>
+                                    <div class="col-7 d-flex align-items-center">
+                                        <div class="numbers">
+                                            <h2 class="card-category">Customers</h2>
+                                            <h4 id="customerCount" class="card-title"></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-stats card-success">
+                            <div class="card-body ">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="icon-big text-center">
+                                            <img src="assests/icon/car-solid-60.png" class="figure-img">
+                                        </div>
+                                    </div>
+                                    <div class="col-7 d-flex align-items-center">
+                                        <div class="numbers">
+                                            <h2 class="card-category">Rent Car</h2>
+                                            <h4 class="card-title">0000</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-stats card-danger">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="icon-big text-center">
+                                            <img src="assests/icon/icons8-add-shopping-cart-60.png"class="figure-img">
+                                        </div>
+                                    </div>
+                                    <div class="col-7 d-flex align-items-center">
+                                        <div class="numbers">
+                                            <h2 class="card-category">Requests</h2>
+                                            <h4 id="requestCount" class="card-title">0000</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-stats card-primary">
+                            <div class="card-body ">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="icon-big text-center">
+                                            <img src="assests/icon/icons8-receive-dollar-60.png"class="figure-img">
+                                        </div>
+                                    </div>
+                                    <div class="col-7 d-flex align-items-center">
+                                        <div class="numbers">
+                                            <h2 class="card-category">Profit</h2>
+                                            <h4 class="card-title">0000$</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header ">
+                                <h4>Pie Chart</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="piechart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="progress-card">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span class="text-muted">Profit</span>
+                                        <span class="text-muted fw-bold"> 0000$</span>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 7px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width:
+                                        00%" aria-valuenow="00" aria-valuemin="0" aria-valuemax="100"
+                                             data-toggle="tooltip" data-placement="top" title="00%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-card">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span class="text-muted">Request</span>
+                                        <span class="text-muted fw-bold"> 0000</span>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 7px;">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 00%"
+                                             aria-valuenow="00" aria-valuemin="0" aria-valuemax="100"
+                                             data-toggle="tooltip" data-placement="top" title="00%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-card">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span class="text-muted">Rent Car</span>
+                                        <span class="text-muted fw-bold"> 00</span>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 7px;">
+                                        <div class="progress-bar bg-primary" role="progressbar"
+                                             style="width: 00%" aria-valuenow="00"
+                                             aria-valuemin="0" aria-valuemax="100"
+                                             data-toggle="tooltip" data-placement="top" title="00%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-card">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span class="text-muted">Customers</span>
+                                        <span class="text-muted fw-bold"> 0000</span>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 7px;">
+                                        <div class="progress-bar bg-warning" role="progressbar"
+                                             style="width: 00%" aria-valuenow="00"
+                                             aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip"
+                                             data-placement="top" title="00%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header ">
+                                <h4 class="card-title">Table #1</h4>
+                                <p class="card-category">Customers Details</p>
+                            </div>
+                            <div class="card-body">
+                                <div>
+
+                                </div>
+                                <div class="table-responsive">
+                                    <table id="tblUserDeatils" class="table table-head-bg-success table-striped table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Password</th>
+                                            <th scope="col">Nic Number</th>
+                                            <th scope="col">Nic Number Image</th>
+                                            <th scope="col">Driving Licens</th>
+                                            <th scope="col">Driving Licen Image</th>
+                                            <th scope="col">Address</th>
+                                            <th scope="col">Contact</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tbodyUser">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header ">
+                                <h4 class="card-title">Table #2</h4>
+                                <p class="card-category">Car Details</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-head-bg-success table-striped table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Car No</th>
+                                            <th scope="col">Brand</th>
+                                            <th scope="col">Type</th>
+                                            <th scope="col">passengers</th>
+                                            <th scope="col">Transmission</th>
+                                            <th scope="col">Fuel</th>
+                                            <th scope="col">Daily Rate</th>
+                                            <th scope="col">Monthly Rate</th>
+                                            <th scope="col">Free km for a day</th>
+                                            <th scope="col">Free km for a month</th>
+                                            <th scope="col">Price per extra KM</th>
+                                            <th scope="col">Registration number</th>
+                                            <th scope="col">Color</th>
+                                            <th scope="col">Image</th>
+                                            <th scope="col">Car Quantity</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tblCarDetails">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--customer-->
+    <div id="customer_panel" class="main-panel">
+        <div  class="content">
+            <div class="container-fluid">
+                <h4 class="page-title">View Customer</h4>
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <div class="card">
+                            <div class="card-header ">
+                                <h4 class="card-title">Table #1</h4>
+                                <p class="card-category">Customer Details</p>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <button id="btnGetAllUsers" class="btn btn-primary" type="button">View Customers</button>
+                                </div>
+                                <div class="table-responsive">
+                                    <table id="tblMain_Cus" class="table table-head-bg-success table-striped table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Password</th>
+                                            <th scope="col">Nic Number</th>
+                                            <th scope="col">Nic Number Image</th>
+                                            <th scope="col">Driving Licens</th>
+                                            <th scope="col">Driving Licen Image</th>
+                                            <th scope="col">Address</th>
+                                            <th scope="col">Contact</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tblUser"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header ">
+                            </div>
+                            <div class="card-body">
+                                <form>
+
+                                    <div class="form-floating mb-6">
+                                        <input class="form-control" id="searchNic"
+                                               placeholder="SearchNic" name="nic" type="text">
+                                        <label for="searchNic">Search NIC No</label>
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="form-floating mb-6">
+                                        <button id="btnSearchNic" class="btn btn-primary" type="button">Search NIC</button>
+
+                                    </div>
+
+                                </form>
+
+                                <hr>
+                                <div class="card-body">
+                                    <form class="car_form">
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="email"
+                                                   placeholder="Email" name="email" type="text">
+                                            <label for="email">Email
+                                            </label>
+                                        </div>
+
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="password"
+                                                   placeholder="Password" name="password" type="text">
+                                            <label for="password">Password</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="nic"
+                                                   placeholder="Nic" name="nic" type="text">
+                                            <label for="nic">NIC</label>
+                                        </div>
+                                        <label>NIC Image - Can not be edition</label>
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control reg-image" id="nicImage"
+                                                   placeholder="Drivinglicense" name="nicImage" type="text">
+                                            <label for="nicImage">NIC Image</label>
+                                        </div>
+
+                                        <!--                                    <div class="form-floating mb-3">-->
+                                        <!--                                        <div class="form-floating mb-3">-->
+                                        <!--                                            <input id="nicImage" name="nicImage" type="file" />-->
+                                        <!--                                        </div>-->
+                                        <!--                                    </div>-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="dlicense"
+                                                   placeholder="Drivinglicense" name="dlicense" type="text">
+                                            <label for="dlicense">Driving Licen</label>
+                                        </div>
+                                        <label>Driving Licen Image - Can not be edition </label>
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control reg-image" id="dlicenseImage"
+                                                   placeholder="Drivinglicense" name="dlicenseImage" type="text">
+                                            <label for="dlicenseImage">Driving Licen Image</label>
+                                        </div>
+
+                                        <!--                                    <div class="form-floating mb-3">-->
+                                        <!--                                        <div class="form-floating mb-3">-->
+                                        <!--                                            <input id="dlicenseImage" name="dlicenseImage" type="file" />-->
+                                        <!--                                        </div>-->
+                                        <!--                                    </div>-->
+
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="address"
+                                                   placeholder="Address" name="address" type="text">
+                                            <label for="address">Address</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="contactNo"
+                                                   placeholder="ContactNo" name="contactNo" type="text">
+                                            <label for="contactNo">Contact</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="customerStatus"
+                                                   placeholder="CustomerStatus" name="cusStatus" type="text">
+                                            <label for="customerStatus">Status</label>
+                                        </div>
+
+                                        <button id="btnUpdateUser" class="btn btn-warning" type="button">Update</button>
+
+                                    </form>
+                                </div>
+<!--                                <h2>Verify Customer</h2>-->
+<!--                                <label>-->
+<!--                                    Search NIC Number-->
+<!--                                    <input id="nicNumber" name="nicNumber" type="text" required>-->
+<!--                                </label>-->
+<!--                                <div class="form-floating mb-6">-->
+<!--                                    <button id="btnSearchNic" class="btn btn-primary" type="button">Search</button>-->
+<!--                                </div>-->
+<!--                                <br>-->
+<!--                                <hr>-->
+<!--                                <form class="car_form">-->
+<!--                                    <div class="form-floating mb-3">-->
+<!--                                        <input class="form-control" id="email"-->
+<!--                                               placeholder="Email" name="email" type="text">-->
+<!--                                        <label for="email">Email-->
+<!--                                        </label>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="form-floating mb-3">-->
+<!--                                        <input class="form-control" id="password"-->
+<!--                                               placeholder="Password" name="password" type="text">-->
+<!--                                        <label for="password">Password</label>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-floating mb-3">-->
+<!--                                        <input class="form-control" id="nicNo"-->
+<!--                                               placeholder="Nic" name="nic" type="text">-->
+<!--                                        <label for="nicNo">NIC</label>-->
+<!--                                    </div>-->
+<!--                                    <label>NIC Image - Can not be edition</label>-->
+<!--                                    <div class="form-floating mb-3">-->
+<!--                                        <input class="form-control reg-image" id="nicImage"-->
+<!--                                               placeholder="Drivinglicense" name="nicImage" type="text">-->
+<!--                                        <label for="nicImage">NIC Image</label>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-floating mb-3">-->
+<!--                                        <input class="form-control" id="dlicense"-->
+<!--                                               placeholder="Drivinglicense" name="dlicense" type="text">-->
+<!--                                        <label for="dlicense">Driving Licen</label>-->
+<!--                                    </div>-->
+<!--                                    <label>Driving Licen Image - Can not be edition </label>-->
+<!--                                    <div class="form-floating mb-3">-->
+<!--                                        <input class="form-control reg-image" id="dlicenseImage"-->
+<!--                                               placeholder="Drivinglicense" name="dlicenseImage" type="text">-->
+<!--                                        <label for="dlicenseImage">Driving Licen Image</label>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="form-floating mb-3">-->
+<!--                                        <input class="form-control" id="address"-->
+<!--                                               placeholder="Address" name="address" type="text">-->
+<!--                                        <label for="address">Address</label>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-floating mb-3">-->
+<!--                                        <input class="form-control" id="contactNo"-->
+<!--                                               placeholder="ContactNo" name="contactNo" type="text">-->
+<!--                                        <label for="contactNo">Contact</label>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-floating mb-3">-->
+<!--                                        <input class="form-control" id="customerStatus"-->
+<!--                                               placeholder="CustomerStatus" name="cusStatus" type="text">-->
+<!--                                        <label for="customerStatus">Status</label>-->
+<!--                                    </div>-->
+
+<!--                                    <button id="btnUpdateUser" class="btn btn-warning" type="button">Update</button>-->
+
+<!--                                </form>-->
+
+<!--                                <div  class="label">Email : <output class="cu-out" id="email" name="email"></output></div>-->
+<!--                                <div  class="label">Password : <output class="cu-out" id="password" name="password"></output></div>-->
+<!--                                <div  class="label">Nic : <output class="cu-out" id="nicNo" name="nic"></output></div>-->
+<!--                                <div  class="label">Nic Image : <output class="cu-out" id="nicImage" name="nicImage"></output></div>-->
+<!--                                <div  class="label">Driving Licens : <output class="cu-out" id="dlicense" name="dlicense"></output></div>-->
+<!--                                <div  class="label">Driving Licens Image : <output class="cu-out" id="dlicenseImage" name="dlicenseImage"></output></div>-->
+<!--                                <div  class="label">Address : <output class="cu-out" id="address" name="address"></output></div>-->
+<!--                                <div  class="label">contact No : <output class="cu-out" id="contactNo" name="contactNo"></output></div>-->
+<!--                                <br>-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--car-->
+    <div id="manageCar_panel" class="main-panel">
+        <div class="content">
+            <div class="container-fluid">
+                <h4 class="page-title">Manage Car</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header ">
+                                <h5>Add Cars</h5>
+                            </div>
+                            <div class="card-body">
+                                <form class="car_form">
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="carNumber"
+                                               placeholder="CarNumber" name="carNumber" type="text">
+                                        <label for="carNumber">Car Number
+                                        </label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="brand"
+                                               placeholder="Brand" name="brand" type="text">
+                                        <label for="brand">Brand</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="type"
+                                               placeholder="Type" name="type" type="text">
+                                        <label for="type">Type</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="passengers"
+                                               placeholder="Passengers" name="passengers" type="text">
+                                        <label for="passengers">Passengers</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="transmission"
+                                               placeholder="Transmission" name="transmission" type="text">
+                                        <label for="transmission"> Transmission type</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="fuel"
+                                               placeholder="Fuel" name="fuel" type="text">
+                                        <label for="fuel"> Fuel Type</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="dailyRate"
+                                               placeholder="DailyRate" name="dailyRate" type="text">
+                                        <label for="dailyRate">Daily Rate (Rs)</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="monthlyRate"
+                                               placeholder="MonthlyRate" name="monthlyRate" type="text">
+                                        <label for="monthlyRate">Monthly Rate (Rs)</label>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header ">
+<!--                                <h5>Add Cars</h5>-->
+                                <br>
+                                <br>
+                            </div>
+                            <div class="card-body">
+                                <form class="car_form">
+
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="freeKmForDay"
+                                               placeholder="FreeKmForDay" name="freeKmForDay" type="text">
+                                        <label for="freeKmForDay"> Free km for a day</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="freeKmForMonth"
+                                               placeholder="FreeKmForMonth" name="freeKmForMonth" type="text">
+                                        <label for="freeKmForMonth"> Free km for a month</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="pricePerExtraKm"
+                                               placeholder="PricePerExtraKm" name="pricePerExtraKm" type="text">
+                                        <label for="pricePerExtraKm">Price per extra KM (Rs)</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="regNumber"
+                                               placeholder="RegNumber" name="regNumber" type="text">
+                                        <label for="regNumber">Registration number
+                                        </label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="color"
+                                               placeholder="Color" name="color" type="text">
+                                        <label for="color">Color</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input id="file" name="file" type="file" />
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="carQuantity"
+                                               placeholder="CarQuantity" name="carQuantity" type="text">
+                                        <label for="carQuantity">Number of cars available</label>
+                                    </div>
+
+                                    <br>
+                                    <br>
+
+
+                                    <button id="btnAddCar" class="btn btn-success" type="button">Add</button>
+                                    <button id="btnDeleteCar" class="btn btn-danger" type="button">Delete</button>
+                                    <button id="btnUpdateCar" class="btn btn-warning" type="button">Update</button>
+                                    <button id="btnGetAllCar" class="btn btn-primary" type="button">View Cars</button>
+                                    <button id="btnClearCar" class="btn btn-simple-danger" type="button">Clear</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md">
+
+                    <div class="card">
+                        <div class="card-header ">
+                            <h4 class="card-title">Table #2</h4>
+                            <p class="card-category">Car Details</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="tblMain_Car" class="table table-head-bg-success table-striped table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Car No</th>
+                                        <th scope="col">Brand</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">passengers</th>
+                                        <th scope="col">Transmission</th>
+                                        <th scope="col">Fuel</th>
+                                        <th scope="col">Daily Rate</th>
+                                        <th scope="col">Monthly Rate</th>
+                                        <th scope="col">Free km for a day</th>
+                                        <th scope="col">Free km for a month</th>
+                                        <th scope="col">Price per extra KM</th>
+                                        <th scope="col">Registration number</th>
+                                        <th scope="col">Color</th>
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Number of cars available</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tblCar"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--request rental-->
+
+    <div id="reqRental_panel" class="main-panel">
+        <div  class="content">
+            <div class="container-fluid">
+                <h4 class="page-title">View Rental Request</h4>
+                <div class="row">
+                    <div class="col-md"
+                    >
+                        <div class="card">
+                            <div class="card-header ">
+                                <h5></h5>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="container">
+                                        <div>
+                                            <button id="btnGetAllReq" class="btn btn-primary" type="button">View Request</button>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                    <tr>
+                                                        <th scope="col">Request Number</th>
+                                                        <th scope="col">Nic number</th>
+                                                        <th scope="col">Car Brand</th>
+                                                        <th scope="col">Rate</th>
+                                                        <th scope="col">Ren in date</th>
+                                                        <th scope="col">Rent out date</th>
+                                                        <th scope="col">Driver Name</th>
+
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="tblRentReq">
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row">
+
+                    <div class="col-md">
+                        <div class="card">
+                            <div class="card-header ">
+                                <h5>Accept request</h5>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <label>Request Id</label>
+                                    <output class="cu-out" id="requestId" name="requestNumber"></output>
+                                    <div  class="label">Customer Nic : <output class="cu-out" id="cusNic" name="nic"></output></div>
+                                    <div  class="label">Car Brand:<output class="cu-out" id="carBrand" name="brand"></output></div>
+                                    <div  class="label">Rate Type: <output id="carRateType" name="rate"></output></div>
+                                    <div  class="label">Rent Start Date: <output id="startDate" name="rate"></output></div>
+                                    <div  class="label">Rent End Date: <output id="endDate" name="rate"></output></div>
+                                    <div  class="label">Driver Name : <output class="cu-out" id="drName" name="driverName"></output></div>
+                                    <select name="driverName" id="selectDriver" class="Menu form-floating mb-3"></select>
+                                    <br>
+                                    <button id="btnAcceptRequest" class="btn btn-success" type="button">Accept </button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--income-->
+    <div id="income_panel" class="main-panel">
+        <div class="content">
+            <div class="container-fluid">
+                <h4 class="page-title">Income</h4>
+                <div class="row">
+                    <div class="col">
+
+                        <div class="card">
+                            <div class="card-header ">
+                                <h4 class="card-title">Table #4</h4>
+                                <p class="card-category">Income List</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-head-bg-success table-striped table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Daily Income</th>
+                                            <th scope="col">Weekly Income</th>
+                                            <th scope="col">Monthly Income</th>
+                                            <th scope="col">Annual Income</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="driver_panel" class="main-panel">
+        <div class="content">
+            <div class="container-fluid">
+                <h4 class="page-title">Manage Driver</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header ">
+                                <h5>Add Drivers</h5>
+                            </div>
+                            <div class="card-body">
+                                <form class="car_form">
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="did"
+                                               placeholder="Did" name="dId" type="text">
+                                        <label for="did">Driver Id
+                                        </label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="d_name"
+                                               placeholder="Name" name="dName" type="text">
+                                        <label for="d_name">Driver Name</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="d_email"
+                                               placeholder="d_email" name="driverEmail" type="text">
+                                        <label for="d_email">Email</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="d_password"
+                                               placeholder="Password" name="driverPassword" type="text">
+                                        <label for="d_password">Password</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="driver_nic"
+                                               placeholder="Driver_Nic" name="driverNic" type="text">
+                                        <label for="driver_nic"> Driver Nic</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="driver_license"
+                                               placeholder="Driver_license" name="driverLicense" type="text">
+                                        <label for="driver_license">Driver License</label>
+                                    </div>
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header ">
+
+                                <br>
+                                <br>
+                            </div>
+                            <div class="card-body">
+                                <form class="car_form">
+
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="d_address"
+                                               placeholder="Address" name="dAddress" type="text">
+                                        <label for="d_address">Address</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="d_contactNo"
+                                               placeholder="contactNo" name="dContactNo" type="text">
+                                        <label for="d_contactNo">Contact No</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="d_age"
+                                               placeholder="Age" name="dAge" type="text">
+                                        <label for="d_age">Age</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="d_gender"
+                                               placeholder="Gender" name="dGender" type="text">
+                                        <label for="d_gender">Gender</label>
+                                    </div>
+
+                                    <br>
+                                    <br>
+
+
+                                    <button id="btnAddDriver" class="btn btn-success" type="button">Add </button>
+                                    <button id="btnDeleteDriver" class="btn btn-danger" type="button">Delete</button>
+                                    <button id="btnUpdateDriver" class="btn btn-warning" type="button">Update</button>
+                                    <button id="btnGetAllDriver" class="btn btn-primary" type="button">View Drivers</button>
+                                    <button id="btnClearDriver" class="btn btn-simple-danger" type="button">Clear</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md">
+
+                    <div class="card">
+                        <div class="card-header ">
+                            <h4 class="card-title">Table #2</h4>
+                            <p class="card-category">Driver Details</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="tblMain_Driver" class="table table-head-bg-success table-striped table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Did</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Password</th>
+                                        <th scope="col">Driver Nic</th>
+                                        <th scope="col">Driver License</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">ContactNo</th>
+                                        <th scope="col">Age</th>
+                                        <th scope="col">Gender</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tblDriver"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" -->
+<!--        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" -->
+<!--        crossorigin="anonymous">-->
+
+<!--</script>-->
+<script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+
+<script src="assests/js/jquery-3.6.0.min.js"></script>
+<script src="assests/bootsrap/js/bootstrap.min.js"></script>
+<script >
+
+    var dashBoard_panel= document.getElementById("dashBoard_panel");
+    var customer_panel= document.getElementById("customer_panel");
+    var manageCar_panel= document.getElementById("manageCar_panel");
+    var reqRental_panel= document.getElementById("reqRental_panel");
+    var income_panel= document.getElementById("income_panel");
+    var driver_panel= document.getElementById("driver_panel");
+
+    dashBoard_panel.style.display='block';
+    customer_panel.style.display='none';
+    manageCar_panel.style.display='none';
+    reqRental_panel.style.display='none';
+    income_panel.style.display='none';
+    driver_panel.style.display='none';
+
+    var dashBoard = document.getElementById("dashBoard");
+    dashBoard.addEventListener('click',function () {
+        dashBoard_panel.style.display='block';
+        customer_panel.style.display='none';
+        manageCar_panel.style.display='none';
+        reqRental_panel.style.display='none';
+        income_panel.style.display='none';
+        driver_panel.style.display='none';
+
+    });
+    var customer = document.getElementById("customer");
+    customer.addEventListener('click',function () {
+        dashBoard_panel.style.display='none';
+        customer_panel.style.display='block';
+        manageCar_panel.style.display='none';
+        reqRental_panel.style.display='none';
+        income_panel.style.display='none';
+        driver_panel.style.display='none';
+
+    });
+    var manageCar = document.getElementById("manageCar");
+    manageCar.addEventListener('click',function () {
+        dashBoard_panel.style.display='none';
+        customer_panel.style.display='none';
+        manageCar_panel.style.display='block';
+        reqRental_panel.style.display='none';
+        income_panel.style.display='none';
+        driver_panel.style.display='none';
+
+    });
+    var reqRental = document.getElementById("reqRental");
+    reqRental.addEventListener('click',function () {
+        dashBoard_panel.style.display='none';
+        customer_panel.style.display='none';
+        manageCar_panel.style.display='none';
+        reqRental_panel.style.display='block';
+        income_panel.style.display='none';
+        driver_panel.style.display='none';
+
+    });
+    var income = document.getElementById("income");
+    income.addEventListener('click',function () {
+        dashBoard_panel.style.display='none';
+        customer_panel.style.display='none';
+        manageCar_panel.style.display='none';
+        reqRental_panel.style.display='none';
+        income_panel.style.display='block';
+        driver_panel.style.display='none';
+
+    });
+    var driver = document.getElementById("driver");
+    driver.addEventListener('click',function () {
+        dashBoard_panel.style.display='none';
+        customer_panel.style.display='none';
+        manageCar_panel.style.display='none';
+        reqRental_panel.style.display='none';
+        income_panel.style.display='none';
+        driver_panel.style.display='block';
+
+    });
+
+
+    //-----------------add car--------------------
+
+
+    $("#btnAddCar").click(function () {
+
+        if (checkvalidationCar()) {
+            //-----upload file----------------------
+
+            var fileObject = $("#file")[0].files[0];//access file object from input field
+            var fileName = $("#file")[0].files[0].name; //get file name
+            var data = new FormData(); //setup form data object to send file data
+            data.append("file", fileObject, fileName); //append data
+            $.ajax({
+                url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/car",
+                method: "POST",
+                async: true,
+                processData: false, //stop processing data of request body
+                contentType: false, // stop setting content type by jQuery
+                data: data,
+                success: function () {
+                    alert("File Uploaded");
+
+                }
+            });
+
+            let cr_carNumber = $("#carNumber").val();
+            let cr_brand = $("#brand").val();
+            let cr_type = $("#type").val();
+            let cr_passengers = $("#passengers").val();
+            let cr_transmission = $("#transmission").val();
+            let cr_fuel = $("#fuel").val();
+            let cr_dailyRate = $("#dailyRate").val();
+            let cr_monthlyRate = $("#monthlyRate").val();
+            let cr_freeKmForDay = $("#freeKmForDay").val();
+            let cr_freeKmForMonth = $("#freeKmForMonth").val();
+            let cr_pricePerExtraKm = $("#pricePerExtraKm").val();
+            let cr_regNumber = $("#regNumber").val();
+            let cr_color = $("#color").val();
+            let cr_carImage = $("#file").val();
+            let cr_quantity = $("#carQuantity").val();
+
+
+            $.ajax({
+                method: "POST",
+                url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/car",
+                contentType: 'application/json',
+                async: true,
+                data: JSON.stringify({
+                    carNumber: cr_carNumber,
+                    brand: cr_brand,
+                    type: cr_type,
+                    passengers: cr_passengers,
+                    transmission: cr_transmission,
+                    fuel: cr_fuel,
+                    dailyRate: cr_dailyRate,
+                    monthlyRate: cr_monthlyRate,
+                    freeKmForDay: cr_freeKmForDay,
+                    freeKmForMonth: cr_freeKmForMonth,
+                    pricePerExtraKm: cr_pricePerExtraKm,
+                    regNumber: cr_regNumber,
+                    color: cr_color,
+                    file: cr_carImage,
+                    carQuantity: cr_quantity
+                }),
+                success: function (data) {
+                    if(data.message=='Success'){
+                        alert('Update Successful');
+                    }
+                    console.log(data);
+                    loadAllCars();
+                    clearAllCarText();
+                },
+                error: function (ob, textStatus, error) {
+                    console.log("error from : " + ob + " " + textStatus + " " + error);
+                    if(data.message!='Success'){
+                        alert('Update UnSuccessful! Try again');
+                    }
+                }
+            });
+        }
+    });
+
+    //---------------update car------------------
+    $("#btnUpdateCar").click(function () {
+
+        if (checkvalidationCar()) {
+
+            //-----upload file----------------------
+
+            var fileObject = $("#file")[0].files[0];//access file object from input field
+            var fileName = $("#file")[0].files[0].name; //get file name
+            var data = new FormData(); //setup form data object to send file data
+            data.append("file", fileObject, fileName); //append data
+            $.ajax({
+                url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/car",
+                method: "POST",
+                async: true,
+                processData: false, //stop processing data of request body
+                contentType: false, // stop setting content type by jQuery
+                data: data,
+                success: function () {
+                    alert("File Uploaded");
+                }
+            });
+
+            let cr_carNumber = $("#carNumber").val();
+            let cr_brand = $("#brand").val();
+            let cr_type = $("#type").val();
+            let cr_passengers = $("#passengers").val();
+            let cr_transmission = $("#transmission").val();
+            let cr_fuel = $("#fuel").val();
+            let cr_dailyRate = $("#dailyRate").val();
+            let cr_monthlyRate = $("#monthlyRate").val();
+            let cr_freeKmForDay = $("#freeKmForDay").val();
+            let cr_freeKmForMonth = $("#freeKmForMonth").val();
+            let cr_pricePerExtraKm = $("#pricePerExtraKm").val();
+            let cr_regNumber = $("#regNumber").val();
+            let cr_color = $("#color").val();
+            let cr_carImage = $("#file").val();
+            let cr_quantity = $("#carQuantity").val();
+
+
+            $.ajax({
+                method: "PUT",
+                url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/car",
+                contentType: 'application/json',
+                async: true,
+
+                data: JSON.stringify({
+                    carNumber: cr_carNumber,
+                    brand: cr_brand,
+                    type: cr_type,
+                    passengers: cr_passengers,
+                    transmission: cr_transmission,
+                    fuel: cr_fuel,
+                    dailyRate: cr_dailyRate,
+                    monthlyRate: cr_monthlyRate,
+                    freeKmForDay: cr_freeKmForDay,
+                    freeKmForMonth: cr_freeKmForMonth,
+                    pricePerExtraKm: cr_pricePerExtraKm,
+                    regNumber: cr_regNumber,
+                    color: cr_color,
+                    file: cr_carImage,
+                    carQuantity: cr_quantity
+                }),
+                success: function (data) {
+                    console.log(data);
+                    loadAllCars();
+                    clearAllCarText();
+
+                }
+            });
+        }
+    });
+
+    //---------------remove car-------------------------------
+
+    $("#btnDeleteCar").click(function () {
+        alert("done")
+
+        let cr_carNumber = $("#carNumber").val();
+
+        $.ajax({
+            method: "DELETE",
+            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/car?id="+cr_carNumber,
+            contentType: 'application/json',
+            async: true,
+            success: function (data, textState, xhr) {
+                console.log(data);
+                loadAllCars();
+                clearAllCarText();
+            }
+
+        });
+
+    });
+
+
+    //-----------get all cars--------------------------------------
+    $("#btnGetAllCar").click(function () {
+        loadAllCars();
+    });
+    loadAllCars();
+
+    function loadAllCars() {
+        $("#tblCar").empty();
+        $.ajax({
+            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/car",
+            method: "GET",
+            async: true,
+            dataType: "json",
+            success: function (data, textState, xhr) {
+
+                for (let i of data.data) {
+                    var row = `<tr><td>${i.carNumber}</td><td>${i.brand}</td><td>${i.type}</td><td>${i.passengers}</td><td>${i.transmission}</td><td>${i.fuel}</td><td>${i.dailyRate}</td><td>${i.monthlyRate}</td><td>${i.freeKmForDay}</td><td>${i.freeKmForMonth}</td><td>${i.pricePerExtraKm}</td><td>${i.regNumber}</td><td>${i.color}</td><td>${i.file}</td><td>${i.carQuantity}</td></tr>`;
+                    $("#tblCar").append(row);
+                }
+            }
+        });
+    }
+
+
+    //--------------------------------------------------------------------------------------------
+    $(document).on('click','#tblMain_Car tbody tr',function () {
+        var tr_cn = $(this).find('td:eq(0)').text();
+        var tr_cb = $(this).find('td:eq(1)').text();
+        var tr_ctype = $(this).find('td:eq(2)').text();
+        var tr_cps = $(this).find('td:eq(3)').text();
+        var tr_ctrans = $(this).find('td:eq(4)').text();
+        var tr_cf = $(this).find('td:eq(5)').text();
+        var tr_cd = $(this).find('td:eq(6)').text();
+        var tr_cm = $(this).find('td:eq(7)').text();
+        var tr_cfd = $(this).find('td:eq(8)').text();
+        var tr_cfm = $(this).find('td:eq(9)').text();
+        var tr_cpr = $(this).find('td:eq(10)').text();
+        var tr_creg = $(this).find('td:eq(11)').text();
+        var tr_ccl = $(this).find('td:eq(12)').text();
+        var tr_cfile = $(this).find('td:eq(13)').text();
+        var tr_cqty = $(this).find('td:eq(14)').text();
+
+        $('#carNumber').val(tr_cn);
+        $('#brand').val(tr_cb);
+        $('#type').val(tr_ctype);
+        $('#passengers').val(tr_cps);
+        $('#transmission').val(tr_ctrans);
+        $('#fuel').val(tr_cf);
+        $('#dailyRate').val(tr_cd);
+        $('#monthlyRate').val(tr_cm);
+        $('#freeKmForDay').val(tr_cfd);
+        $('#freeKmForMonth').val(tr_cfm);
+        $('#pricePerExtraKm').val(tr_cpr);
+        $('#regNumber').val(tr_creg);
+        $('#color').val(tr_ccl);
+        $('#file').val(tr_cfile);
+        $('#carQuantity').val(tr_cqty);
+
+        $('#tblCar').removeClass('highlight');
+        $(this).addClass('highlight');
+
+        $("#tblCar>tr").on('dblclick',function (){
+            $(this).remove();
+        });
+
+    });
+
+    //------------------- clear all field and focus car number ------------------------------------
+
+    function clearAllCarText() {
+        $("#carNumber").val("");
+        $("#brand").val("");
+        $("#type").val("");
+        $("#passengers").val("");
+        $("#transmission").val("");
+        $("#fuel").val("");
+        $("#dailyRate").val("");
+        $("#monthlyRate").val("");
+        $("#freeKmForDay").val("");
+        $("#freeKmForMonth").val("");
+        $("#pricePerExtraKm").val("");
+        $("#regNumber").val("");
+        $("#color").val("");
+        $("#file").val("");
+        $("#carQuantity").val("");
+        $("#carNumber").focus("");
+    }
+
+
+    //-------------------------------------------------------------------
+
+    $("#carNumber").on('keyup',function (event){
+        if (event.key=="Enter"){
+            $('#brand').focus();
+        }
+
+        // let inputID=$("#carNumber").val();
+        // if (cusIdRegEx.test(inputID)){
+        //     $("#customerID").css('border','2px solid #66FF00');
+        //     $("#lblcusid").text("");
+        // }else{
+        //     $("#customerID").css('border','2px solid red');
+        //     $("#lblcusid").text('Your Input Data Format is Wrong (Pattern C00-001)');
+        // }
+    });
+
+    $("#brand").on('keydown',function (event){
+        if (event.key=="Enter"){
+            $('#type').focus();
+        }
+
+        // let inputID=$("#customerName").val();
+        // if (cusNameRegEx.test(inputID)){
+        //     $("#customerName").css('border','2px solid #66FF00');
+        //     $("#lblcusname").text("");
+        // }else{
+        //     $("#customerName").css('border','2px solid red');
+        //     $("#lblcusname").text('Cus Name is required field: Minimum 5, Max 20, Spaces Allowed')
+        // }
+    });
+
+    $("#passengers").on('keydown',function (event){
+        if (event.key=="Enter"){
+            $('#transmission').focus();
+        }
+
+        // let inputID=$("#passengers").val();
+        // if (cusAddRegEx.test(inputID)){
+        //     $("#customerAddress").css('border','2px solid #66FF00');
+        //     $("#lblcusadd").text("");
+        // }else{
+        //     $("#customerAddress").css('border','2px solid red');
+        //     $("#lblcusadd").text('Cus Address is required field: Minimum 7');
+        // }
+    });
+
+
+    $("#fuel").on('keydown',function (event){
+        if (event.key=="Enter"){
+            $('#dailyRate').focus();
+        }
+
+        // let inputID=$("#customerContact").val();
+        // if (cusCntRegEx.test(inputID)){
+        //     $("#customerContact").css('border','2px solid #66FF00');
+        //     $("#lblcuscnt").text("");
+        // }else{
+        //     $("#customerContact").css('border','2px solid red');
+        //     $("#lblcuscnt").text('Cus Contact is required field: Only numbers');
+        // }
+    });
+
+    $("#monthlyRate").on('keydown',function (event){
+        if (event.key=="Enter"){
+            $('#freeKmForDay').focus();
+        }
+    });
+    $("#freeKmForMonth").on('keydown',function (event){
+        if (event.key=="Enter"){
+            $('#pricePerExtraKm').focus();
+        }
+    });
+    $("#regNumber").on('keydown',function (event){
+        if (event.key=="Enter"){
+            $('#color').focus();
+        }
+    });
+    $("#file").on('keydown',function (event){
+        if (event.key=="Enter"){
+            $('#btnAddCar').focus();
+        }
+    });
+
+    $('#carNumber,#brand,#type,#passengers,#transmission,#fuel,#type,#dailyRate,#monthlyRate,#freeKmForDay,#freeKmForMonth,#pricePerExtraKm,#regNumber,#color,#file').on('keydown',function (event){
+        if (event.key=="Tab"){
+            event.preventDefault();
+        }
+    });
+
+    function removeDuplicateRows($table){
+        function getVisibleRowText($row){
+            return $row.find('td:visible').text().toLowerCase();
+        }
+
+        $table.find('tr').each(function(index, row){
+
+            var $row = $(row);
+            $row.nextAll('tr').each(function(index, next){
+                var $next = $(next);
+
+                if(getVisibleRowText($next) == getVisibleRowText($row))
+                    alert("DuplicateId");
+                $next.remove();
+            })
+        });
+    }
+
+    removeDuplicateRows($('#tblCar'));
+
+
+    //---------------------------------load all customers------------------------------------------------------------
+    $("#btnGetAllUsers").click(function () {
+        loadAllRegistrations();
+    });
+    function loadAllRegistrations() {
+        $("#tblUser").empty();
+        $.ajax({
+            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/regisration",
+            method: "GET",
+            async: true,
+            dataType: "json",
+            success: function (data, textState, xhr) {
+
+                for (let i of data.data) {
+                    var row = `<tr><td>${i.email}</td><td>${i.password}</td><td>${i.nic}</td><td>${i.nicImage}</td><td>${i.dlicense}</td><td>${i.dlicenseImage}</td><td>${i.address}</td><td>${i.contactNo}</td><td>${i.cusStatus}</td></tr>`;
+                    $("#tblUser").append(row);
+                }
+            }
+        });
+    }
+
+    //------------------------------------load all requests-----------------------------------------------------------------------------
+
+    $("#btnGetAllReq").click(function () {
+        loadAllBookings();
+    });
+    function loadAllBookings() {
+        $("#tblRentReq").empty();
+        $.ajax({
+            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/booking",
+            method: "GET",
+            async: true,
+            dataType: "json",
+            success: function (data, textState, xhr) {
+
+                for (let i of data.data) {
+                    var row = `<tr><td>${i.requestNumber}</td><td>${i.nicNumber}</td><td>${i.brand}</td><td>${i.rate}</td><td>${i.rentStartDate}</td><td>${i.rentEndDate}</td><td>${i.drName}</td></tr>`;
+
+                    $("#tblRentReq").append(row);
+                }
+            }
+        });
+    }
+
+//============================================================================================================================================================================
+
+    //---------------------------------------add driver--------------------------------
+
+    $("#btnAddDriver").click(function () {
+        if (checkvalidationDriver()) {
+            let dr_id = $("#did").val();
+            let dr_name = $("#d_name").val();
+            let dr_email = $("#d_email").val();
+            let dr_password = $("#d_password").val();
+            let dr_driver_nic = $("#driver_nic").val();
+            let dr_driver_license = $("#driver_license").val();
+            let dr_address = $("#d_address").val();
+            let dr_contactNo = $("#d_contactNo").val();
+            let dr_age = $("#d_age").val();
+            let dr_gender = $("#d_gender").val();
+
+            $.ajax({
+                method: "POST",
+                url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/driver",
+                contentType: 'application/json',
+                async: true,
+                data: JSON.stringify({
+                    driverId: dr_id,
+                    driverName: dr_name,
+                    driverEmail: dr_email,
+                    driverPassword: dr_password,
+                    driverNic: dr_driver_nic,
+                    driverLicense: dr_driver_license,
+                    driverAddress: dr_address,
+                    driverContactNo: dr_contactNo,
+                    driverAge: dr_age,
+                    driverGender: dr_gender
+                }),
+                success: function (data) {
+                    if(data.message=='Success'){
+                        alert('Added Successful');
+                    }
+                    console.log(data);
+                    loadAllDrivers();
+                    clearAllDriverText();
+                },
+                error: function (ob, textStatus, error) {
+                    console.log("error from : " + ob + " " + textStatus + " " + error);
+                    if(data.message!='Success'){
+                        alert('Added UnSuccessful! Try again');
+                    }
+                }
+            });
+        }
+    });
+
+    //---------------update driver------------------
+    $("#btnUpdateDriver").click(function () {
+
+        alert("Done");
+
+        let dr_id = $("#did").val();
+        let dr_name = $("#d_name").val();
+        let dr_email = $("#d_email").val();
+        let dr_password = $("#d_password").val();
+        let dr_driver_nic = $("#driver_nic").val();
+        let dr_driver_license = $("#driver_license").val();
+        let dr_address = $("#d_address").val();
+        let dr_contactNo = $("#d_contactNo").val();
+        let dr_age = $("#d_age").val();
+        let dr_gender = $("#d_gender").val();
+
+
+        $.ajax({
+            method: "PUT",
+            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/driver",
+            contentType: 'application/json',
+            async: true,
+
+            data: JSON.stringify({
+                driverId: dr_id,
+                driverName: dr_name,
+                driverEmail: dr_email,
+                driverPassword: dr_password,
+                driverNic: dr_driver_nic,
+                driverLicense: dr_driver_license,
+                driverAddress: dr_address,
+                driverContactNo: dr_contactNo,
+                driverAge: dr_age,
+                driverGender: dr_gender
+
+            }),
+            success: function (data) {
+                console.log(data);
+                loadAllDrivers();
+                clearAllDriverText();
+
+            }
+        });
+
+
+
+
+    });
+
+    //---------------remove driver-------------------------------
+
+    $("#btnDeleteDriver").click(function () {
+        alert("done")
+
+        let dr_id = $("#did").val();
+
+        $.ajax({
+            method: "DELETE",
+            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/driver?id="+dr_id,
+            contentType: 'application/json',
+            async: true,
+            success: function (data, textState, xhr) {
+                console.log(data);
+                loadAllDrivers();
+                clearAllDriverText();
+
+            }
+
+        });
+
+    });
+
+
+    //-----------get all drivers--------------------------------------
+    $("#btnGetAllDriver").click(function () {
+        loadAllDrivers();
+    });
+    loadAllDrivers();
+
+    function loadAllDrivers() {
+        $("#tblDriver").empty();
+        $.ajax({
+            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/driver",
+            method: "GET",
+            async: true,
+            dataType: "json",
+            success: function (data, textState, xhr) {
+
+                for (let i of data.data) {
+                    var row = `<tr><td>${i.driverId}</td><td>${i.driverName}</td><td>${i.driverEmail}</td><td>${i.driverPassword}</td><td>${i.driverNic}</td><td>${i.driverLicense}</td><td>${i.driverAddress}</td><td>${i.driverContactNo}</td><td>${i.driverAge}</td><td>${i.driverGender}</td></tr>`;
+                    $("#tblDriver").append(row);
+                }
+            }
+        });
+    }
+
+
+    //--------------------------------------------------------------------------------------------
+    $(document).on('click','#tblMain_Driver tbody tr',function () {
+        var tr_did = $(this).find('td:eq(0)').text();
+        var tr_name = $(this).find('td:eq(1)').text();
+        var tr_email = $(this).find('td:eq(2)').text();
+        var tr_ps = $(this).find('td:eq(3)').text();
+        var tr_dnic = $(this).find('td:eq(4)').text();
+        var tr_dlic = $(this).find('td:eq(5)').text();
+        var tr_add = $(this).find('td:eq(6)').text();
+        var tr_cntct = $(this).find('td:eq(7)').text();
+        var tr_age = $(this).find('td:eq(8)').text();
+        var tr_gender = $(this).find('td:eq(9)').text();
+
+        $('#did').val(tr_did);
+        $('#d_name').val(tr_name);
+        $('#d_email').val(tr_email);
+        $('#d_password').val(tr_ps);
+        $('#driver_nic').val(tr_dnic);
+        $('#driver_license').val(tr_dlic);
+        $('#d_address').val(tr_add);
+        $('#d_contactNo').val(tr_cntct);
+        $('#d_age').val(tr_age);
+        $('#d_gender').val(tr_gender);
+
+
+        $('#tblDriver').removeClass('highlight');
+        $(this).addClass('highlight');
+
+        $("#tblDriver>tr").on('dblclick',function (){
+            $(this).remove();
+        });
+
+    });
+
+    //------------------- clear all field and focus did ------------------------------------
+
+    function clearAllDriverText() {
+        $("#did").val("");
+        $("#d_name").val("");
+        $("#d_email").val("");
+        $("#d_password").val("");
+        $("#driver_nic").val("");
+        $("#driver_license").val("");
+        $("#d_address").val("");
+        $("#d_contactNo").val("");
+        $("#d_age").val("");
+        $("#d_gender").val("");
+
+    }
+
+
+
+
+    //---------------------------search customer nic--------------------------------------
+
+    $("#btnSearchNic").click(function () {
+        let nic = $("#searchNic").val();
+        if (!nic.trim().length<=0){
+            $.ajax({
+                url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/regisration/" + nic,
+                method: "GET",
+                async: true,
+                success: function (data, textState, xhr) {
+                    let c = data.data;
+                    $("#email").val(c.email);
+                    $("#password").val(c.password);
+                    $("#nic").val(c.nic);
+                    $("#nicImage").val(c.nicImage);
+                    $("#dlicense").val(c.dlicense);
+                    $("#dlicenseImage").val(c.dlicenseImage);
+                    $("#address").val(c.address);
+                    $("#contactNo").val(c.contactNo);
+                    $("#customerStatus").val(c.cusStatus);
+                },
+                error: function (xhr) {
+                    alert(xhr.responseJSON.data);
+                }
+            });
+        }
+
+    });
+
+    //---------------update user-----------------------------------
+    $("#btnUpdateUser").click(function () {
+
+        alert("work")
+        let up_email = $("#email").val();
+        let up_pass = $("#password").val();
+        let up_nic = $("#nic").val();
+        let up_nicImg = $("#nicImage").val();
+        let up_lic = $("#dlicense").val();
+        let up_licImg = $("#dlicenseImage").val();
+        let up_address = $("#address").val();
+        let up_cntct = $("#contactNo").val();
+        let up_status = $("#customerStatus").val();
+
+        $.ajax({
+            method: "PUT",
+            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/regisration",
+            contentType: 'application/json',
+            async: true,
+
+            data: JSON.stringify({
+                email: up_email,
+                password: up_pass,
+                nic: up_nic,
+                nicImage: up_nicImg,
+                dlicense: up_lic,
+                dlicenseImage: up_licImg,
+                address: up_address,
+                contactNo: Number.parseInt(up_cntct),
+                cusStatus: up_status,
+            }),
+            success: function (data) {
+                console.log(data);
+                alert("Update success");
+
+            }
+        });
+
+    });
+
+
+    //----------car input field validations----------------------
+
+    function checkvalidationCar() {
+
+        let cr_carNumber = $("#carNumber").val();
+        let cr_brand = $("#brand").val();
+        let cr_type = $("#type").val();
+        let cr_passengers = $("#passengers").val();
+        let cr_transmission = $("#transmission").val();
+        let cr_fuel = $("#fuel").val();
+        let cr_dailyRate = $("#dailyRate").val();
+        let cr_monthlyRate = $("#monthlyRate").val();
+        let cr_freeKmForDay = $("#freeKmForDay").val();
+        let cr_freeKmForMonth = $("#freeKmForMonth").val();
+        let cr_pricePerExtraKm = $("#pricePerExtraKm").val();
+        let cr_regNumber = $("#regNumber").val();
+        let cr_color = $("#color").val();
+        let cr_carImage = $("#file").val();
+        let cr_quantity = $("#carQuantity").val();
+
+        if (cr_carNumber!=""){
+            if (cr_brand!=""){
+                if(cr_type!=""){
+                    if (cr_passengers!=""){
+                        if (cr_transmission!=""){
+                            if (cr_fuel!=""){
+                                if (cr_dailyRate!=""){
+                                    if (cr_monthlyRate!=""){
+                                        if (cr_freeKmForDay!=""){
+                                            if (cr_freeKmForMonth!=""){
+                                                if (cr_pricePerExtraKm!=""){
+                                                    if (cr_regNumber!=""){
+                                                        if (cr_color!=""){
+                                                            if (cr_carImage!=""){
+                                                                if (cr_quantity){
+                                                                    return true;
+                                                                }else{
+                                                                    alert("Please Add Available Cars ");
+                                                                    return false;
+                                                                 }
+                                                            }else{
+                                                                alert("Please Add Car Image");
+                                                                return false;
+                                                            }
+                                                        }else{
+                                                            alert("Please Add Color");
+                                                            return false;
+                                                        }
+                                                    }else{
+                                                        alert("Please Add Registration Number");
+                                                        return false;
+                                                    }
+                                                }else{
+                                                    alert("Please Add Price Per Extra Km");
+                                                    return false;
+                                                }
+
+                                            }else{
+                                                alert("Please Add Free Km For Month");
+                                                return false;
+                                            }
+                                        }else{
+                                            alert("Please Add Free Km For Day");
+                                            return false;
+                                        }
+                                    }else{
+                                        alert("Please Add Monthly Rate");
+                                        return false;
+                                    }
+                                }else{
+                                    alert("Please Add Daily Rate");
+                                    return false;
+                                }
+                            }else{
+                                alert("Please Add Fuel Type");
+                                return false;
+                            }
+                        }else{
+                            alert("Please Add Transmission");
+                            return false;
+                        }
+                    }else{
+                        alert("Please Add Passengers");
+                        return false;
+                    }
+                }else{
+                    alert("Please Add Type");
+                    return false;
+                }
+            }else {
+                alert("Please Add Brand");
+                return false;
+            }
+        }else{
+            alert("Please Add Car Number");
+            return false;
+        }
+
+    }
+
+
+    //---------driver validation-------------------------
+
+    function checkvalidationDriver() {
+
+        let dr_id = $("#did").val();
+        let dr_name = $("#d_name").val();
+        let dr_email = $("#d_email").val();
+        let dr_password = $("#d_password").val();
+        let dr_driver_nic = $("#driver_nic").val();
+        let dr_driver_license = $("#driver_license").val();
+        let dr_address = $("#d_address").val();
+        let dr_contactNo = $("#d_contactNo").val();
+        let dr_age = $("#d_age").val();
+        let dr_gender = $("#d_gender").val();
+
+        if (dr_id!=""){
+            if (dr_name!=""){
+                if(dr_email!=""){
+                    if (dr_password!=""){
+                        if (dr_driver_nic!=""){
+                            if (dr_driver_license!=""){
+                                if (dr_address!=""){
+                                    if (dr_contactNo!=""){
+                                        if (dr_age!=""){
+                                            if (dr_gender){
+                                                return true;
+                                            }else{
+                                                alert("Please Add Gender");
+                                                return false;
+                                            }
+                                        }else{
+                                            alert("Please Add Age");
+                                            return false;
+                                        }
+                                    }else{
+                                        alert("Please Add Contact Number");
+                                        return false;
+                                    }
+                                }else{
+                                    alert("Please Add Address");
+                                    return false;
+                                }
+                            }else{
+                                alert("Please Add Driver License");
+                                return false;
+                            }
+                        }else{
+                            alert("Please Add Driver NIC Number");
+                            return false;
+                        }
+                    }else {
+                        alert("Please Add Password");
+                        return false;
+                    }
+                }else{
+                    alert("Please Add Email");
+                    return false;
+                }
+            }else{
+                alert("Please Add Name");
+                return false;
+            }
+        }else{
+            alert("Please Add id");
+            return false;
+        }
+
+    }
+
+    //----customer count-------
+
+    $.ajax({
+        type: "GET",
+        url:"http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/regisration",
+        success:function (response) {
+            $("#customerCount").text(response.data.length);
+        },
+    });
+
+    //----request count-------
+
+    $.ajax({
+        type: "GET",
+        url:"http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/booking",
+        success:function (response) {
+            $("#requestCount").text(response.data.length);
+        },
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

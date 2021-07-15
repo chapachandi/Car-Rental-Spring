@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Easy Car Rental | Driver Login</title>
+    <link rel="stylesheet" href="assests/css/DriverLogin.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+<!-- Wrapper Area -->
+<div class="wrapper__area" id="wrapper_Area">
+    <!-- Forms Area -->
+    <div class="forms__area">
+        <!-- Login Form -->
+        <form class="login__form" id="loginForm">
+            <!-- Form Title -->
+            <h1 class="form__title">Driver Sign In!</h1>
+            <!-- inputs Groups -->
+            <div class="input__group">
+                <label class="field">
+                    <input type="text" name="username" placeholder="Username" id="loginEmail">
+                </label>
+                <span class="input__icon"><i class="bx bx-user"></i></span>
+                <small class="input__error_message"></small>
+            </div>
+            <div class="input__group">
+                <label class="field">
+                    <input type="password" name="password" placeholder="Password" id="loginPassword">
+                </label>
+                <span class="input__icon">
+                    <i class="bx bx-lock"></i>
+                </span>
+                <span class="showHide__Icon">
+                    <i class="bx bx-hide __web-inspector-hide-shortcut__"></i>
+                </span>
+                <small class="input__error_message"></small>
+            </div>
+<!--            <div class="form__actions">-->
+<!--                <label for="checkboxInput" class="remeber_me">-->
+<!--                    <input type="checkbox" id="checkboxInput">-->
+<!--                    <span class="checkmark"></span>-->
+<!--&lt;!&ndash;                    <span>Remeber Me</span>&ndash;&gt;-->
+<!--                </label>-->
+<!--&lt;!&ndash;                <div class="forgot_password">Forgot Password?</div>&ndash;&gt;-->
+<!--            </div>-->
+            <!-- Login Button -->
+            <a href="booking.html">
+                <button type="submit" class="submit-button" id="loginSubmitBtn">Sign in</button>
+            </a>
+
+            <!-- Alternate Login -->
+            <div class="alternate-login">
+                <div class="link">
+                    <i class='bx bxl-google'></i>
+                    <span>Google</span>
+                </div>
+                <div class="link">
+                    <i class='bx bxl-facebook-circle'></i>
+                    <span>Facebook</span>
+                </div>
+            </div>
+        </form> <!-- End Login Form -->
+
+        <!-- Sign Up Form -->
+<!--        <form class="sign-up__form" id="signUpForm">-->
+<!--            &lt;!&ndash; Form Title &ndash;&gt;-->
+<!--            <h1 class="form__title">Sign Up!</h1>-->
+<!--            inputs Groups-->
+<!--            <div class="input__group">-->
+<!--                <label class="field">-->
+<!--                    <input type="text" name="username" placeholder="Username123..." id="signUpUsername">-->
+<!--                </label>-->
+<!--                <span class="input__icon"><i class="bx bx-user"></i></span>-->
+<!--                <small class="input__error_message"></small>-->
+<!--            </div>-->
+<!--            <div class="input__group">-->
+<!--                <label class="field">-->
+<!--                    <input type="text" name="email" placeholder="Email@example.com" id="signUpEmail">-->
+<!--                </label>-->
+<!--                <span class="input__icon"><i class="bx bx-at"></i></span>-->
+<!--                <small class="input__error_message"></small>-->
+<!--            </div>-->
+<!--            <div class="input__group">-->
+<!--                <label class="field">-->
+<!--                    <input type="password" name="password" placeholder="Password123$#%&..." id="signUpPassword">-->
+<!--                </label>-->
+<!--                <span class="input__icon"><i class="bx bx-lock"></i></span>-->
+<!--                <span class="showHide__Icon"><i class="bx bx-hide"></i></span>-->
+<!--                <small class="input__error_message"></small>-->
+<!--            </div>-->
+<!--            <div class="input__group confirm__group">-->
+<!--                <label class="field">-->
+<!--                    <input type="password" name="confirm_password" placeholder="Confirm Password" id="signUpConfirmPassword">-->
+<!--                </label>-->
+<!--                <span class="input__icon"><i class="bx bx-lock"></i></span>-->
+<!--                <span class="showHide__Icon"><i class="bx bx-hide"></i></span>-->
+<!--                <small class="input__error_message"></small>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; Sign Up Button &ndash;&gt;-->
+<!--            <button type="submit" class="submit-button" id="signUpSubmitBtn">Sign Up</button>-->
+<!--            &lt;!&ndash; Alternate Login &ndash;&gt;-->
+<!--            <div class="alternate-login">-->
+<!--                <div class="link">-->
+<!--                    <i class='bx bxl-google'></i>-->
+<!--                    <span>Google</span>-->
+<!--                </div>-->
+<!--                <div class="link">-->
+<!--                    <i class='bx bxl-facebook-circle'></i>-->
+<!--                    <span>Facebook</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form> &lt;!&ndash; End Sign Up Form &ndash;&gt;-->
+    </div><!-- End Forms Area -->
+
+    <!-- Aside Area -->
+    <div class="aside__area" id="aside_Area">
+        <div class="login__aside-info">
+            <h4>Hello</h4>
+            <img src="https://d.top4top.io/p_1945xjz2y1.png" alt="Image">
+            <p>Enter your personal details and start journey with us</p>
+<!--            <button id="aside_signUp_Btn">Sign Up</button>-->
+        </div>
+        <div class="sign-up__aside-info">
+            <h4>Welcome</h4>
+            <img src="https://e.top4top.io/p_1945sidbp2.png" alt="Image">
+            <p>To Keep connected with us please login with your personal info</p>
+            <button id="aside_signIn_Btn">Sign In</button>
+        </div>
+    </div>
+</div>
+<!-- End Wrapper Area -->
+
+<script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+<script src="assests/js/Login.js"></script>
+<script src="assests/js/jquery-3.6.0.min.js"></script>
+<script>
+    //---------------------------------login---------------------------------------------------
+
+    $("#loginSubmitBtn").click(function () {
+
+
+        let re_email = $("#loginEmail").val();
+        let re_pass = $("#loginPassword").val()
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:8080/Easy_Car_Rental_BachEnd_war_exploded/api/v1/regisration/logindriver",
+            contentType: 'application/json',
+            async: true,
+            data: JSON.stringify({
+                d_email: re_email,
+                d_password: re_pass
+            }),
+            success: function (data) {
+                if(data.code=="200"){
+                    window.location.href="http://localhost:63342/Easy_Car_Rental_BachEnd/Easy_Car_Rental_ForntEnd/driverAccount.html?_ijt=rkmi4r3gbuq74s7fo7llep1c8b"
+
+                }
+            },
+            error:function (er) {
+                alert(er.responseJSON.data);
+            }
+        });
+
+    });
+</script>
+
+</body>
+</html>
