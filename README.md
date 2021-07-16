@@ -11,3 +11,9 @@
 ![11](https://user-images.githubusercontent.com/73926739/126005415-76551a79-156a-47d1-83e3-87c70c17a87b.png)
 
 
+# Tech/framework used
+* Spring
+* AJAX
+* HTML
+* CSS
+* Java Script
